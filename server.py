@@ -39,4 +39,4 @@ def get_counter():
 
 if __name__ == "__main__":
     # app.run(host='0.0.0.0', port=443)
-    app.run(host='0.0.0.0', port=443, ssl_context=('/etc/letsencrypt/live/dmraise.ru/fullchain.pem', '/etc/letsencrypt/crypt/live/dmraise.ru/privkey.pem'))
+    app.run(host='0.0.0.0', port=443, ssl_context=('/etc/letsencrypt/live/dmraise.ru/fullchain.pem', '/etc/letsencrypt/live/dmraise.ru/privkey.pem'))
