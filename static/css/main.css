@@ -64,4 +64,9 @@ button {
     padding: 20px;
     background-color: red;
     border-radius: 50%;
+    background-image: url("../images/circle.png");
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
