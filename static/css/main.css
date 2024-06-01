@@ -24,7 +24,7 @@ html, body {
     height: 90%;
     border-top: 2px solid #2c58e9;
     margin-top: 15%;
-    background-color: rgb(13, 174, 248);
+    background-color: #353434;;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 }
@@ -32,7 +32,7 @@ html, body {
 .main-tokens-value {
     width: 100%;
     height: 20%;
-    border-bottom: 1px solid #080808;
+    border-bottom: 1px solid #2c2c2c;
     /* background-color: #353434; */
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;

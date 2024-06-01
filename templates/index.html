@@ -13,7 +13,7 @@
             <div class="main-tokens-value">
                 <div id="data-in-load-tokens", class="data-in-load-tokens">connect...</div>
             </div>
-            <button id="clickerButton">Click Me!</button>
+            <!-- <button id="clickerButton">Click Me!</button> -->
         </div>
     </div>
 
@@ -48,7 +48,7 @@
         function displayData(data) {
             const dataContainer = document.getElementById('data-in-load-tokens');
             const formatedData = data.toLocaleString('en-US');
-            dataContainer.textContent = formatedData;
+            dataContainer.textContent = formatedData + " OXI";
         }
         window.onload = fetchData;
     </script>
