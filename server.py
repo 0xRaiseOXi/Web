@@ -75,7 +75,7 @@ def update_counter():
     return f"{data['oxi_tokens_value']}"
 
 @app.route('/claim_tokens')
-def update_counter():
+def claim_tokens():
     query_string = request.query_string.decode('utf-8')
     parsed_data = parse_qs(query_string)
     id = json.loads(parsed_data['user'][0])

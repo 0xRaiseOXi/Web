@@ -15,7 +15,7 @@
             </div>
             <!-- <div class="circle"></div> -->
             <!-- <button id="clickerButton">Click Me!</button> -->
-            <div class="claim-button">Собрать OXI</div>
+            <div class="claim-button", id="claim-button">Собрать OXI</div>
         </div>
     </div>
 
@@ -23,6 +23,8 @@
     <script>
         let tg = window.Telegram.WebApp;
         tg.expand()
+
+        let data_local;
 
         async function fetchData() {
             const dataContainer = document.getElementById('data-in-load-tokens');
@@ -47,11 +49,20 @@
             }
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
-            var myDiv = document.getElementsByClassName("claim-button");
+        document.addEventListener("DOMContentLoaded", () => {
+            const myDiv = document.getElementById("claim-button");
+            const counter = document.getElementById('data-in-load-tokens');
 
-            myDiv.addEventListener("click", function() {
-                claim_tokens();
+            myDiv.addEventListener('click', async () => {
+                const url = `https://dmraise.ru/claim_tokens?${tg.initData}`;
+                const response = await fetch(url);
+                if (!response.ok) {
+                    myDiv.textContent = "Server Error";
+                }
+                const data = await response.json();
+
+                counter.textContent = data['oxi_tokens_value'] + " OXI";
+                data_local = data;
             });
         });
 
@@ -61,16 +72,6 @@
             dataContainer.textContent = formatedData + " OXI";
         }
         window.onload = fetchData;
-
-        async function claim_tokens() {
-            const url = `https://dmraise.ru/claim_tokens?${tg.initData}`;
-            const response = await fetch(url);
-            const data = await response.json();
-
-            var counterReplace = document.getElementById('data-in-load-tokens');
-            counterReplace.textContent = data['oxi_tokens_value'] + " OXI";
-        }
-
     </script>
 </body>
 </html>
