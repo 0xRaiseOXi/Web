@@ -49,9 +49,6 @@ def get_data():
     query_string = request.query_string.decode('utf-8')
     parsed_data = parse_qs(query_string)
     id = json.loads(parsed_data['user'][0])
-    print(id)
-    print(type(id))
-    print(id['id'])
     data = collection.find_one({"_id": id['id']})
     return f"{data['oxi_tokens_value']}"
 
@@ -85,7 +82,7 @@ def claim_tokens():
     data['oxi_tokens_value'] += added_tokens
     data['last_time_update'] = time.time()
     new_data = collection.replace_one({'_id': id['id']}, data)
-    print(new_data)
+
     return jsonify(data)
 
 
