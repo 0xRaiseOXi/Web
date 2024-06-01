@@ -59,8 +59,8 @@ button {
 }
 
 .circle {
-    width: 300px;
-    height: 300px;
+    width: 100px;
+    height: 100px;
     padding: 20px;
     background-color: gold;
     border-radius: 50%;
