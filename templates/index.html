@@ -65,7 +65,7 @@
                 }
                 const data = await response.json();
                 const formatedData = data['oxi_tokens_value'].toLocaleString('en-US');
-                counter.textContent = formatedData + " OXI";
+                counter.textContent = formatedData;
                 data_local = data;
                 myDiv.style.backgroundColor = "#003afa";
             });
@@ -74,7 +74,7 @@
         function displayData(data) {
             const dataContainer = document.getElementById('data-in-load-tokens');
             const formatedData = data.toLocaleString('en-US');
-            dataContainer.textContent = formatedData + " OXI";
+            dataContainer.textContent = formatedData;
         }
         window.onload = fetchData;
     </script>
