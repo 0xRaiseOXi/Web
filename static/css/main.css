@@ -87,14 +87,14 @@ button {
 
 .claim-button {
     position: absolute;
-    width: 85%;
-    margin-left: 5%;
-    top: 80%;
+    width: 84%;
+    margin-left: 8%;
+    top: 85%;
     height: 50px;
     background-color: #003afa;
     color: #f6f7f8;
     font-size: 25px;
-    border-radius: 5px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;

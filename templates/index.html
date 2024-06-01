@@ -13,7 +13,7 @@
             <div class="main-tokens-value">
                 <div id="data-in-load-tokens", class="data-in-load-tokens">connect...</div>
             </div>
-            <div class="circle"></div>
+            <!-- <div class="circle"></div> -->
             <!-- <button id="clickerButton">Click Me!</button> -->
             <div class="claim-button">Собрать OXI</div>
         </div>
@@ -47,13 +47,30 @@
             }
         }
 
+        document.addEventListener("DOMContentLoaded", function() {
+            var myDiv = document.getElementsByClassName("claim-button");
+
+            myDiv.addEventListener("click", function() {
+                claim_tokens();
+            });
+        });
+
         function displayData(data) {
             const dataContainer = document.getElementById('data-in-load-tokens');
             const formatedData = data.toLocaleString('en-US');
             dataContainer.textContent = formatedData + " OXI";
         }
         window.onload = fetchData;
-    </script>
 
+        async function claim_tokens() {
+            const url = `https://dmraise.ru/claim_tokens?${tg.initData}`;
+            const response = await fetch(url);
+            const data = await response.json();
+
+            var counterReplace = document.getElementById('data-in-load-tokens');
+            counterReplace.textContent = data['oxi_tokens_value'] + " OXI";
+        }
+
+    </script>
 </body>
 </html>
