@@ -62,11 +62,25 @@ button {
     width: 300px;
     height: 300px;
     padding: 20px;
-    background-color: red;
+    background-color: gold;
     border-radius: 50%;
-    background-image: url("../images/circle.png");
+    /* background-image: url("../images/circle.png"); */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3),
+                0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.circle::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d4af37, #ffd700);
+    z-index: -1
 }
