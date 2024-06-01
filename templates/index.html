@@ -60,8 +60,8 @@
                     myDiv.textContent = "Server Error";
                 }
                 const data = await response.json();
-
-                counter.textContent = data['oxi_tokens_value'] + " OXI";
+                const formatedData = data['oxi_tokens_value'].toLocaleString('en-US');
+                counter.textContent = formatedData + " OXI";
                 data_local = data;
             });
         });

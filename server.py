@@ -82,14 +82,11 @@ def claim_tokens():
     data = collection.find_one({"_id": id['id']})
 
     added_tokens = update_tokens_value_vault(id['id'])
-    print(added_tokens)
     data['oxi_tokens_value'] += added_tokens
     data['last_time_update'] = time.time()
-    print(data)
-    print(id['id'])
     new_data = collection.replace_one({'_id': id['id']}, data)
-
-    return jsonify(new_data)
+    print(new_data)
+    return jsonify(data)
 
 
 if __name__ == "__main__":
