@@ -38,5 +38,4 @@ def get_counter():
     return f"{data['oxi_tokens_value']}"
 
 if __name__ == "__main__":
-    # app.run(host='0.0.0.0', port=443)
     app.run(host='0.0.0.0', port=443, ssl_context=('/etc/letsencrypt/live/dmraise.ru/fullchain.pem', '/etc/letsencrypt/live/dmraise.ru/privkey.pem'))
