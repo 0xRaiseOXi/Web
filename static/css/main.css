@@ -27,7 +27,7 @@ html, body {
     /* background-color: #353434;; */
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    background-image: linear-gradient(to bottom left, black, cyan);
+    background-image: linear-gradient(to bottom, black, grey 50%, cyan);
 }
 
 .main-tokens-value {
