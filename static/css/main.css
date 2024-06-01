@@ -99,7 +99,3 @@ button {
     align-items: center;
     justify-content: center;
 }
-
-.claim-button:hover {
-    background-color: #2f5df5;
-}
