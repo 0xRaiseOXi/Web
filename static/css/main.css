@@ -138,8 +138,24 @@ button {
     background-color: #152133;
     left: 5%;
     border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
 }
 
+#active-button-menu {
+    width: 25%;
+    height: 110%;
+}
+.button-menu-buttons {
+    background-color: #0c1325;
+    width: 20%;
+    height: 100%;
+    /* border: 1px solid #f6f7f8; */
+    margin-left: 1px;
+    border-radius: 20px;
+}
 #panel-2-energy {
     color: #f6f7f8;
     display: flex;
