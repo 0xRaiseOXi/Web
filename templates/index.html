@@ -10,15 +10,22 @@
 </head>
 <body>
     <div class="container">
-        <div class="version">V 0.0.1</div>
+        <div class="version">V 0.0.1 beta</div>
         <div class="planet">Planet XR-1</div>
         <div class="content">
             <div id="data-in-load-tokens", class="data-in-load-tokens">100,000,000</div>
+            <div class="panels-main"> 
+                <div class="panel-1", id="panel-1-coins"></div>
+                <div class="panel-1", id="panel-2-energy">Энергия</div>
+                <div class="panel-1">Фабрика</div>
+            </div>
             <!-- <div class="main-tokens-value">
                 <div id="data-in-load-tokens", class="data-in-load-tokens">connect...</div>
             </div>
             <div class="claim-button", id="claim-button">Собрать OXI</div> -->
             <!-- <div class="vault"></div> -->
+            <div class="vault-main"></div>
+            <div class="main-menu-buttons"></div>
         </div>
     </div>
 
@@ -77,6 +84,6 @@
             dataContainer.textContent = formatedData;
         }
         window.onload = fetchData;
-    </script>
+    </script> 
 </body>
 </html>

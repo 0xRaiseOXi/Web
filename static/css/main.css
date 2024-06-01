@@ -31,7 +31,7 @@ html, body {
     border-top-right-radius: 30px;
     /* background-image: linear-gradient(to bottom, black, black 30%, cyan); */
     /* background-image: linear-gradient(to bottom, black, black 30%, red); */
-    background-image: linear-gradient(to bottom, black, black 30%, rgb(17, 0, 255)); 
+    background-image: linear-gradient(to bottom, #090b0f, #0d1622 25%, rgb(17, 0, 255)); 
     box-shadow: 0 -10px 20px rgba(3, 33, 199, 0.7);
     /* transition: box-shadow 0.3s ease-in-out; */
 }
@@ -92,7 +92,7 @@ button {
     justify-content: center;
     width: 100%;
     height: 4%;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .vault {
@@ -112,4 +112,47 @@ button {
     color: #f6f7f8;
     font-weight: 600;
     font-size: 20px;
+}
+
+.panels-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.panel-1 {
+    width: 30%;
+    height: 100px;
+    top: 40%;
+    background-color: #003afa;
+    border-radius: 20px;
+}
+
+.main-menu-buttons {
+    bottom: 0;
+    position: absolute;
+    width: 90%;
+    height: 10%;
+    background-color: #152133;
+    left: 5%;
+    border-radius: 20px;
+}
+
+#panel-2-energy {
+    color: #f6f7f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vault-main {
+    width: 300px;
+    height: 200px;
+    background-color: #152133;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    border-radius: 20px;
 }
