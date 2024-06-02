@@ -85,9 +85,13 @@
         
         function vault_update() {
             const vault = document.getElementById("tokens-value-vault");
+            vault.textContent = "v1";
             const current_time = Math.floor(Date.now() / 1000);
+            vault.textContent = "v2";
             const time_difference = current_time - data_local['last_time_update'];
-            const time_different_in_hours = time_difference / 3600
+            vault.textContent = "v3";
+            const time_different_in_hours = time_difference / 3600;
+            vault.textContent = "v4";
             const added_tokens = int(time_different_in_hours * 1000)
             const vault_size = data_local['vault_size'];
             if (added_tokens > vault_size) {
