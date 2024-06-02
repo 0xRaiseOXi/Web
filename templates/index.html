@@ -24,7 +24,15 @@
             </div>
             <div class="claim-button", id="claim-button">Собрать OXI</div> -->
             <!-- <div class="vault"></div> -->
-            <div class="vault-main"></div>
+            <div class="vault-main">
+                <div class="vault-name">
+                    Хранилище
+                    <div class="level-vault">lvl 1</div>
+                </div>
+                <div class="tokens-value-vault", id="tokens-value-vault">450,000</div>
+                <div class="claim-tokens-button">Собрать</div>
+                <div class="progress-bar", id="progress-bar"></div>
+            </div>
             <div class="main-menu-buttons">
                 <div class="button-menu-buttons"></div>
                 <div class="button-menu-buttons"></div>
@@ -58,7 +66,7 @@
                 const url = `https://dmraise.ru/getdata?${tg.initData}`;
                 const response = await fetch(url);
                 const data = await response.json();
-                displayData(data);
+                displayData(data['oxi_tokens_value'], data['added_tokens']);
             } catch (error) {
                 console.error('Ошибка при получении данных:', error);
                 dataContainer.innerHTML = `<p>Server Error</p>`;
@@ -66,7 +74,7 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            const myDiv = document.getElementById("claim-button");
+            const myDiv = document.getElementById("claim-tokens-button");
             const counter = document.getElementById('data-in-load-tokens');
 
             myDiv.addEventListener('click', async () => {
@@ -84,12 +92,16 @@
             });
         });
 
-        function displayData(data) {
+        function displayData(data, tokensVault) {
             const dataContainer = document.getElementById('data-in-load-tokens');
             const formatedData = data.toLocaleString('en-US');
             dataContainer.textContent = formatedData;
+
+            const vault = document.getElementById('tokens-value-vault');
+            const formatedDataVault = tokensVault.toLocaleString('en-US');
+            vault.textContent = formatedDataVault;
         }
         window.onload = fetchData;
-    </script> 
+    </script>  
 </body>
 </html>

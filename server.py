@@ -50,16 +50,19 @@ def get_data():
     parsed_data = parse_qs(query_string)
     id = json.loads(parsed_data['user'][0])
     data = collection.find_one({"_id": id['id']})
-    return f"{data['oxi_tokens_value']}"
+
+    added_tokens = update_tokens_value_vault(id['id'])
+    data['added_tokens'] = added_tokens
+    return jsonify(data)
 
 @app.route('/get_counter')
 def get_counter():
     query_string = request.query_string.decode('utf-8')
     parsed_data = parse_qs(query_string)
     id = json.loads(parsed_data['user'][0])
-    data = tokens.find_one({"_id": id['id']})
-    
-    return f"{data['oxi_tokens_value']}"
+
+    added_tokens = update_tokens_value_vault(id['id'])
+    return f"{added_tokens}"
 
 @app.route('/update_counter')
 def update_counter():
