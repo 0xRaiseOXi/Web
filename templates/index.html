@@ -15,7 +15,7 @@
         <div class="content">
             <div id="data-in-load-tokens", class="data-in-load-tokens">
                 <img src="/static/images/moneta.png" alt="", class="moneta-main-balance">
-                <span id="main-balance">100,000,000</span>
+                <div id="main-balance">100,000,000</div>
             </div>
             <div class="panels-main"> 
                 <div class="panel-1", id="panel-1-coins"></div>
@@ -61,6 +61,7 @@
                 const response = await fetch(url);
                 const data = await response.json();
                 data_local = data;
+                dataContainer.textContent = 'v0';
                 displayData(data['oxi_tokens_value'], data['added_tokens']);
             } catch (error) {
                 console.error('Ошибка при получении данных:', error);
