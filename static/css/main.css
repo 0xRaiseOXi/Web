@@ -249,3 +249,20 @@ button {
     background-color: #003afa;
     border-radius: 20px;
 }
+
+.container-friends {
+    background-color: #152133;
+    width: 100%;
+    height: 100%;
+}
+
+.text-friends {
+    position: absolute;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    top: 20%;
+    color: #f6f7f8;
+    font-weight: 500;
+    font-size: 25px;
+}
