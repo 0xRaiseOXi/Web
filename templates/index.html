@@ -43,6 +43,7 @@
                 <div class="button-menu-buttons">Рынок</div>
                 <div class="button-menu-buttons">Атака</div>
             </div>
+            <div class="tasks">Задания</div>
         </div>
     </div>
 
@@ -103,7 +104,9 @@
         function displayData(data, tokensVault) {
             const dataContainer = document.getElementById('main-balance');
             const formatedData = data.toLocaleString('en-US');
-            dataContainer.textContent = formatedData;
+            // dataContainer.textContent = formatedData;
+            
+            animateNumber(dataContainer, dataContain.textContent, formatedData, 2000);  // Увеличивает число с 0 до 100 за 2 секунды
 
             const vault = document.getElementById('tokens-value-vault');
             const formatedDataVault = tokensVault.toLocaleString('en-US');
@@ -111,6 +114,26 @@
         }
         window.onload = fetchData;
         const intervalId = setInterval(vault_update, 1000);
+
+        function animateNumber(element, start, end, duration) {
+            let startTime = null;
+
+            function step(currentTime) {
+                if (!startTime) startTime = currentTime;
+                const progress = Math.min((currentTime - startTime) / duration, 1);
+                element.textContent = Math.floor(progress * (end - start) + start);
+
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    element.textContent = end;
+                }
+            }
+            requestAnimationFrame(step);
+        }
+
+        // const counterElement = document.getElementById('counter');
+        // animateNumber(counterElement, 0, 100, 2000);  // Увеличивает число с 0 до 100 за 2 секунды
     </script>  
 </body>
 </html>
