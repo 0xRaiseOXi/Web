@@ -61,7 +61,6 @@
                 const response = await fetch(url);
                 const data = await response.json();
                 data_local = data;
-                dataContainer.textContent = 'v0';
                 displayData(data['oxi_tokens_value'], data['added_tokens']);
             } catch (error) {
                 console.error('Ошибка при получении данных:', error);
@@ -104,12 +103,15 @@
         }
 
         function displayData(data, tokensVault) {
+            dataContainer.textContent = 'v0.1';
             const dataContainer = document.getElementById('main-balance');
             const formatedData = data.toLocaleString('en-US');
             // dataContainer.textContent = formatedData;
-            
-            animateNumber(dataContainer, parseInt(dataContain.textContent, 10), formatedData, 2000);  // Увеличивает число с 0 до 100 за 2 секунды
-
+            dataContainer.textContent = 'v0.2';
+            const currentValue = parseInt(dataContain.textContent, 10);
+            dataContainer.textContent = 'v0.3';
+            animateNumber(dataContainer, currentValue, formatedData, 2000);  // Увеличивает число с 0 до 100 за 2 секунды
+            dataContainer.textContent = 'v0.4';
             const vault = document.getElementById('tokens-value-vault');
             const formatedDataVault = tokensVault.toLocaleString('en-US');
             vault.textContent = formatedDataVault;
