@@ -44,6 +44,10 @@ def update_tokens_value_vault(id):
 def index():
     return render_template('index.html')
 
+@app.route('/friends')
+def friends():
+    return render_template('friends.html')
+
 @app.route('/getdata')
 def get_data():
     query_string = request.query_string.decode('utf-8')
