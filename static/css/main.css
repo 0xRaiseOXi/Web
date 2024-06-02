@@ -310,4 +310,8 @@ button {
     border-bottom-left-radius: 10px;
     background-color: #f18202;
     top: 22%;
+    color: #ffffff;
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
