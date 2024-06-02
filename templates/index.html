@@ -37,7 +37,7 @@
                 <div class="progress-bar", id="progress-bar"></div>
             </div>
             <div class="main-menu-buttons">
-                <div class="button-menu-buttons">Токены</div>
+                <div class="button-menu-buttons", id="test">Токены</div>
                 <div class="button-menu-buttons", onclick='location.href="https://dmraise.ru/friends";'>Друзья</div>
                 <div class="button-menu-buttons", id="active-button-menu">Улучшения</div>
                 <div class="button-menu-buttons">Рынок</div>
@@ -134,11 +134,12 @@
                 }
                 requestAnimationFrame(updateCounter);
             }
-
+            
+            const test = document.getElementById('test');
             // Пример использования функции animateCounter
             const currentCount = parseInt(counterElement.textContent, 10); // Текущее значение счетчика
             const duration = 20000; // Продолжительность анимации в миллисекундах
-
+            test.textContent = currentCount;
             // Вызов функции анимации с текущим значением, целевым значением и длительностью
             animateCounter(currentCount, targetCount, duration);
         };
