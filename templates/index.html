@@ -81,11 +81,10 @@
                 }
                 const data = await response.json();
                 const formatedData = data['oxi_tokens_value'].toLocaleString('en-US');
-                counter.textContent = formatedData;
+                // counter.textContent = formatedData;
+                animate_main_counter(formatedData);
                 counterVault.textContent = 0;
                 data_local = data;
-
-                test();
             });
         });
         
@@ -116,7 +115,7 @@
         window.onload = fetchData;
         const intervalId = setInterval(vault_update, 1000);
         
-        function test() {
+        function animate_main_counter(targetCount) {
             const counterElement = document.getElementById('main-balance');
             function animateCounter(startValue, endValue, duration) {
                 const startTime = performance.now();
@@ -138,7 +137,6 @@
 
             // Пример использования функции animateCounter
             const currentCount = parseInt(counterElement.textContent, 10); // Текущее значение счетчика
-            const targetCount = 200000; // Целевое значение
             const duration = 2000; // Продолжительность анимации в миллисекундах
 
             // Вызов функции анимации с текущим значением, целевым значением и длительностью
