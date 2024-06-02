@@ -92,7 +92,8 @@
             vault.textContent = "v3";
             const time_different_in_hours = time_difference / 3600;
             vault.textContent = "v4";
-            const added_tokens = int(time_different_in_hours * 1000)
+            const added_tokens = int(time_different_in_hours * 1000);
+            vault.textContent = "v5";
             const vault_size = data_local['vault_size'];
             if (added_tokens > vault_size) {
                 vault.textContent = added_tokens
