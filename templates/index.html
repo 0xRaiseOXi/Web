@@ -34,11 +34,11 @@
                 <div class="progress-bar", id="progress-bar"></div>
             </div>
             <div class="main-menu-buttons">
-                <div class="button-menu-buttons"></div>
-                <div class="button-menu-buttons"></div>
-                <div class="button-menu-buttons", id="active-button-menu"></div>
-                <div class="button-menu-buttons"></div>
-                <div class="button-menu-buttons"></div>
+                <div class="button-menu-buttons">Токены</div>
+                <div class="button-menu-buttons">Друзья</div>
+                <div class="button-menu-buttons", id="active-button-menu">Улучшения</div>
+                <div class="button-menu-buttons">Рынок</div>
+                <div class="button-menu-buttons">Атака</div>
             </div>
         </div>
     </div>
@@ -85,15 +85,10 @@
         
         function vault_update() {
             const vault = document.getElementById("tokens-value-vault");
-            vault.textContent = "v1";
             const current_time = Math.floor(Date.now() / 1000);
-            vault.textContent = "v2";
             const time_difference = current_time - data_local['last_time_update'];
-            vault.textContent = "v3" + time_difference;
             const time_different_in_hours = time_difference / 3600;
-            vault.textContent = "v4 " + time_different_in_hours;
-            const added_tokens = Math.trunc(time_different_in_hours * 1000);
-            vault.textContent = "v5" + added_tokens;
+            const added_tokens = Math.trunc(time_different_in_hours * 5000);
             const vault_size = data_local['vault_size'];
             if (added_tokens < vault_size) {
                 vault.textContent = added_tokens
