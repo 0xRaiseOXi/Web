@@ -64,7 +64,7 @@
                 displayData(data['oxi_tokens_value'], data['added_tokens']);
             } catch (error) {
                 console.error('Ошибка при получении данных:', error);
-                dataContainer.innerHTML = `<p>Server Error</p>`;
+                // dataContainer.textContent = 'Server Error';
             }
         }
 
@@ -119,17 +119,19 @@
 
         function animateNumber(element, start, end, duration) {
             let startTime = null;
-
+            element.textContent = 'v1';
             function step(currentTime) {
                 if (!startTime) startTime = currentTime;
+                element.textContent = 'v2';
                 const progress = Math.min((currentTime - startTime) / duration, 1);
                 element.textContent = Math.floor(progress * (end - start) + start);
-
+                element.textContent = 'v3';
                 if (progress < 1) {
                     requestAnimationFrame(step);
                 } else {
                     element.textContent = end;
                 }
+                element.textContent = 'v4';
             }
             requestAnimationFrame(step);
         }
