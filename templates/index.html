@@ -82,7 +82,7 @@
                 const data = await response.json();
                 const formatedData = data['oxi_tokens_value'].toLocaleString('en-US');
                 // counter.textContent = formatedData;
-                animate_main_counter(formatedData);
+                animate_main_counter(data['oxi_tokens_value']);
                 counterVault.textContent = 0;
                 data_local = data;
             });
@@ -124,7 +124,7 @@
                     const elapsedTime = currentTime - startTime;
                     const progress = Math.min(elapsedTime / duration, 1); // Прогресс анимации от 0 до 1
                     const currentCount = Math.floor(startValue + progress * (endValue - startValue));
-                    counterElement.textContent = currentCount;
+                    counterElement.textContent = currentCount.toLocaleString('en-US');
 
                     if (progress < 1) {
                         requestAnimationFrame(updateCounter); // Продолжаем анимацию
