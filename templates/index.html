@@ -116,7 +116,7 @@
         const intervalId = setInterval(vault_update, 1000);
         
         function parseNumber(number) {
-            return parseInt(number.replace(/, /g, '', 10));
+            return Number(number.replace(/,/g, ''));
         }
 
         function animate_main_counter(targetCount) {
