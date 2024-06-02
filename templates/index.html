@@ -78,7 +78,6 @@
             const counter = document.getElementById('data-in-load-tokens');
 
             myDiv.addEventListener('click', async () => {
-                myDiv.style.backgroundColor = "#2f5df5";
                 const url = `https://dmraise.ru/claim_tokens?${tg.initData}`;
                 const response = await fetch(url);
                 if (!response.ok) {
@@ -88,7 +87,6 @@
                 const formatedData = data['oxi_tokens_value'].toLocaleString('en-US');
                 counter.textContent = formatedData;
                 data_local = data;
-                myDiv.style.backgroundColor = "#003afa";
             });
         });
 

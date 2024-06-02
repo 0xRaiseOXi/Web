@@ -240,4 +240,5 @@ button {
 
 .claim-tokens-button:active {
     background-color: #003afa;
+    border-radius: 20px;
 }
