@@ -64,7 +64,7 @@
                 displayData(data['oxi_tokens_value'], data['added_tokens']);
             } catch (error) {
                 console.error('Ошибка при получении данных:', error);
-                // dataContainer.textContent = 'Server Error';
+                dataContainer.textContent = 'Server Error';
             }
         }
 
@@ -81,10 +81,11 @@
                 }
                 const data = await response.json();
                 const formatedData = data['oxi_tokens_value'].toLocaleString('en-US');
-                // counter.textContent = formatedData;
-                animateNumber(counter, parseInt(counter.textContent, 10), formatedData, 2000);  // Увеличивает число с 0 до 100 за 2 секунды
+                counter.textContent = formatedData;
                 counterVault.textContent = 0;
                 data_local = data;
+
+                test();
             });
         });
         
@@ -103,15 +104,10 @@
         }
 
         function displayData(data, tokensVault) {
-            dataContainer.textContent = 'v0.1';
             const dataContainer = document.getElementById('main-balance');
             const formatedData = data.toLocaleString('en-US');
-            // dataContainer.textContent = formatedData;
-            dataContainer.textContent = 'v0.2';
-            const currentValue = parseInt(dataContain.textContent, 10);
-            dataContainer.textContent = 'v0.3';
-            animateNumber(dataContainer, currentValue, formatedData, 2000);  // Увеличивает число с 0 до 100 за 2 секунды
-            dataContainer.textContent = 'v0.4';
+            dataContainer.textContent = formatedData;
+
             const vault = document.getElementById('tokens-value-vault');
             const formatedDataVault = tokensVault.toLocaleString('en-US');
             vault.textContent = formatedDataVault;
@@ -119,27 +115,35 @@
 
         window.onload = fetchData;
         const intervalId = setInterval(vault_update, 1000);
+        
+        function test() {
+            const counterElement = document.getElementById('main-balance');
+            function animateCounter(startValue, endValue, duration) {
+                const startTime = performance.now();
 
-        function animateNumber(element, start, end, duration) {
-            let startTime = null;
-            element.textContent = 'v1';
-            function step(currentTime) {
-                if (!startTime) startTime = currentTime;
-                element.textContent = 'v2';
-                const progress = Math.min((currentTime - startTime) / duration, 1);
-                element.textContent = Math.floor(progress * (end - start) + start);
-                element.textContent = 'v3';
-                if (progress < 1) {
-                    requestAnimationFrame(step);
-                } else {
-                    element.textContent = end;
+                function updateCounter(currentTime) {
+                    const elapsedTime = currentTime - startTime;
+                    const progress = Math.min(elapsedTime / duration, 1); // Прогресс анимации от 0 до 1
+                    const currentCount = Math.floor(startValue + progress * (endValue - startValue));
+                    counterElement.textContent = currentCount;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter); // Продолжаем анимацию
+                    } else {
+                        console.log('Анимация завершена');
+                    }
                 }
+                requestAnimationFrame(updateCounter);
             }
-            requestAnimationFrame(step);
-        }
 
-        // const counterElement = document.getElementById('counter');
-        // animateNumber(counterElement, 0, 100, 2000);  // Увеличивает число с 0 до 100 за 2 секунды
+            // Пример использования функции animateCounter
+            const currentCount = parseInt(counterElement.textContent, 10); // Текущее значение счетчика
+            const targetCount = 200000; // Целевое значение
+            const duration = 2000; // Продолжительность анимации в миллисекундах
+
+            // Вызов функции анимации с текущим значением, целевым значением и длительностью
+            animateCounter(currentCount, targetCount, duration);
+        };
     </script>  
 </body>
 </html>
