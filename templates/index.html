@@ -82,7 +82,7 @@
                 const data = await response.json();
                 const formatedData = data['oxi_tokens_value'].toLocaleString('en-US');
                 // counter.textContent = formatedData;
-                animateNumber(counter, counter.textContent, formatedData, 2000);  // Увеличивает число с 0 до 100 за 2 секунды
+                animateNumber(counter, parseInt(counter.textContent, 10), formatedData, 2000);  // Увеличивает число с 0 до 100 за 2 секунды
                 counterVault.textContent = 0;
                 data_local = data;
             });
@@ -107,7 +107,7 @@
             const formatedData = data.toLocaleString('en-US');
             // dataContainer.textContent = formatedData;
             
-            animateNumber(dataContainer, dataContain.textContent, formatedData, 2000);  // Увеличивает число с 0 до 100 за 2 секунды
+            animateNumber(dataContainer, parseInt(dataContain.textContent, 10), formatedData, 2000);  // Увеличивает число с 0 до 100 за 2 секунды
 
             const vault = document.getElementById('tokens-value-vault');
             const formatedDataVault = tokensVault.toLocaleString('en-US');
