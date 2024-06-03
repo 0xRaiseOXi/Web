@@ -413,7 +413,7 @@ button {
     filter: invert(1);
 }
 
-/* .progress-container {
+.progress-container {
     width: 35px;
     height: 80px;
     position: absolute;
@@ -428,7 +428,7 @@ button {
     align-items: center;
     flex-direction: column;
     border-radius: 7px;
-} */
+}
 
 .progress-bar {
     width: 100%;
@@ -438,7 +438,7 @@ button {
     background-color: #ff9900;
     transition: height 0.3s;
 } 
-
+/* 
 .progress-container {
     position: absolute;
     width: 90%;
@@ -454,7 +454,7 @@ button {
     border-radius: 7px;
     left: 5%;
     border: 2px solid rgb(0, 4, 255);
-}
+} */
 
 .factor-oxi-add {
     width: 25%;
@@ -464,11 +464,13 @@ button {
 }
 
 .league {
-    font-size: 14px;
+    color: #ffffff;
+    font-size: 17px;
     font-weight: 500;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    top: 1%;
 }
 
-/* .container-balance {
-    top: 7%;
-    position: relative;
-} */
