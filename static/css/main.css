@@ -372,6 +372,14 @@ button {
     width: 25px;
     height: 25px;
     position: absolute;
-    top: 10%;
+    top: 20%;
+    filter: invert(1);
+}
+
+.upgrade-navigation-bar {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 15%;
     filter: invert(1);
 }
