@@ -271,10 +271,11 @@ button {
 .friends-add {
     position: absolute;
     display: flex;
-    text-align: center;
-    justify-content: center;
+    flex-direction: column;
+    /* text-align: column; */
+    /* justify-content: column;   */
     width: 84%;
-    height: 10%;
+    height: 30%;
     left: 8%;
     top: 25%;
     color: #f6f7f8;
@@ -314,4 +315,51 @@ button {
     display: flex;
     text-align: center;
     justify-content: center;
+}
+/* 
+.friends-all {
+    font-size: 16px;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    margin-top: 5%;
+    height: 10%;
+    padding-left: 5%;
+    border-bottom: 1px solid #3701fa;
+} */
+
+.friends-all {
+    font-size: 16px;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #3701fa;
+}
+
+.add-from-friends {
+    font-size: 16px;
+    width: 100%;
+    height: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding-left: 5%;
+    border-bottom: 1px solid #3701fa;
+}
+
+.partners {
+    font-size: 16px;
+    width: 100%;
+    height: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding-left: 5%;
+    border-bottom: 1px solid #3701fa;
+}
+
+.moneta-navigation-bar {
+   width: 35px;
+   height: 35px;
+   position: absolute;
+   top: 15%;
 }

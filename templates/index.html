@@ -37,7 +37,10 @@
                 <div class="progress-bar", id="progress-bar"></div>
             </div>
             <div class="main-menu-buttons">
-                <div class="button-menu-buttons">Токены</div>
+                <div class="button-menu-buttons">
+                    <img src="/static/images/moneta.png" alt="", class="moneta-navigation-bar">
+                    Токены
+                </div>
                 <div class="button-menu-buttons", onclick='location.href="https://dmraise.ru/friends";'>Друзья</div>
                 <div class="button-menu-buttons", id="active-button-menu">Улучшения</div>
                 <div class="button-menu-buttons">Рынок</div>
@@ -139,7 +142,7 @@
                 requestAnimationFrame(updateCounter);
             }
             
-            const duration = 2000; // Продолжительность анимации в миллисекундах
+            const duration = 1000; // Продолжительность анимации в миллисекундах
             // Вызов функции анимации с текущим значением, целевым значением и длительностью
             animateCounter(parseNumber(counterElement.textContent), targetCount, duration);
         };
