@@ -39,7 +39,7 @@ html, body {
 .main-tokens-value {
     width: 100%;
     height: 20%;
-    border-bottom: 1px solid #2c2c2c;
+    border-bottom: 12px solid #2c2c2c;
     /* background-color: #353434; */
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -363,7 +363,7 @@ button {
     text-align: center;
     width: 100%;
     height: 50px;
-    border-bottom: 1px solid #3701fa;
+    border-bottom: 12px solid #3701fa;
 }
 
 .add-from-friends {
@@ -373,7 +373,7 @@ button {
     margin-top: 5%;
     margin-bottom: 5%;
     padding-left: 5%;
-    border-bottom: 1px solid #3701fa;
+    border-bottom: 12px solid #3701fa;
 }
 
 .partners {
@@ -383,7 +383,7 @@ button {
     margin-top: 5%;
     margin-bottom: 5%;
     padding-left: 5%;
-    border-bottom: 1px solid #3701fa;
+    border-bottom: 12px solid #3701fa;
 }
 
 .moneta-navigation-bar {
@@ -413,7 +413,7 @@ button {
     filter: invert(1);
 }
 
-.progress-container {
+/* .progress-container {
     width: 35px;
     height: 80px;
     position: absolute;
@@ -428,12 +428,47 @@ button {
     align-items: center;
     flex-direction: column;
     border-radius: 7px;
-}
+} */
 
 .progress-bar {
     width: 100%;
     border-radius: 0;
     height: 0;
-    background-color: #08f700;
+    /* background-color: #0059ff; */
+    background-color: #ff9900;
     transition: height 0.3s;
+} 
+
+.progress-container {
+    position: absolute;
+    width: 90%;
+    height: 15%;
+    background-color: #272e3f;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 7px;
+    left: 5%;
+    border: 2px solid rgb(0, 4, 255);
 }
+
+.factor-oxi-add {
+    width: 25%;
+    background-color: #f58608;
+    border-radius: 15px;
+    margin-left: 2px;
+}
+
+.league {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* .container-balance {
+    top: 7%;
+    position: relative;
+} */

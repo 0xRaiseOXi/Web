@@ -15,9 +15,12 @@
         <div class="content">
             <div id="data-in-load-tokens", class="data-in-load-tokens">
                 <img src="/static/images/moneta.png" alt="", class="moneta-main-balance">
-                <div id="main-balance">100,000,000</div>
+                <div class="container-balance">
+                    <div id="main-balance">100,000,000</div>
+                    <div class="league">Diamond</div>
+                </div>
             </div>
-            <div class="panels-main"> 
+            <!-- <div class="panels-main"> 
                 <div class="panel-1", id="panel-1-coins">
                     <div class="progress-container">
                         <div class="progress-bar" id="progress-bar"></div>
@@ -25,6 +28,9 @@
                     <div class="vault-text">Хранилище</div>
                     <div class="vault-level">lvl 1</div>
                 </div>
+            </div> -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
             </div>
             <div class="vault-main">
                 <div class="vault-name">
@@ -57,7 +63,9 @@
                     Атака
                 </div>
             </div>
-            <div class="tasks">+1000 OXI/hour</div>
+            <div class="tasks">
+                <div>+1000 OXI/hour</div>
+            </div>
         </div>
     </div>
 
@@ -65,7 +73,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const progressBar = document.getElementById('progress-bar');
-            let percentage = 75; // Укажите процент заполнения здесь (например, 75%)
+            let percentage = 55; // Укажите процент заполнения здесь (например, 75%)
 
             setProgress(percentage);
 

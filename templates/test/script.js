@@ -1,13 +1,11 @@
-// script.js
-document.addEventListener("DOMContentLoaded", () => {
-    const progressBar = document.getElementById('progress-bar');
-    let percentage = 75; // Укажите процент заполнения здесь (например, 75%)
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedBorder = document.querySelector('.animated-border');
 
-    setProgress(percentage);
+    animatedBorder.addEventListener('mouseenter', () => {
+        animatedBorder.classList.add('animate');
+    });
 
-    function setProgress(percentage) {
-        if (percentage < 0) percentage = 0;
-        if (percentage > 100) percentage = 100;
-        progressBar.style.height = percentage + '%';
-    }
+    animatedBorder.addEventListener('mouseleave', () => {
+        animatedBorder.classList.remove('animate');
+    });
 });
