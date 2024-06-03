@@ -125,7 +125,7 @@
                 const formatedData = data['oxi_tokens_value'].toLocaleString('en-US');
                 // counter.textContent = formatedData;
                 animate_main_counter(data['oxi_tokens_value']);
-                vault_progress_bar(data['vault_use']);
+                vault_progress_bar(0);
                 counterVault.textContent = 0;
                 data_local = data;
             });
@@ -133,18 +133,24 @@
         
         function vault_update() {
             const vault = document.getElementById("tokens-value-vault");
+            const progress_bar = document.getElementById("progress-container");
             const current_time = Math.floor(Date.now() / 1000);
             const time_difference = current_time - data_local['last_time_update'];
             const time_different_in_hours = time_difference / 3600;
             const added_tokens = Math.trunc(time_different_in_hours * 5000);
             const vault_size = data_local['vault_size'];
+            const percentage = Math.trunc(added_tokens / vault_size * 100);
             if (added_tokens < vault_size) {
                 if (added_tokens < 0) {
                     vault.textContent = 0;
+                    vault_progress_bar(percentage);
+                } else {
+                    vault.textContent = added_tokens;
+                    vault_progress_bar(percentage);
                 }
-                vault.textContent = added_tokens;
             } else {
                 vault.textContent = vault_size;
+                vault_progress_bar(percentage);
             }
         }
 
