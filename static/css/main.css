@@ -118,7 +118,7 @@ button {
     position: absolute;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     width: 100%;
     height: 12%;
     padding-left: 20px;
@@ -130,13 +130,14 @@ button {
     top: 40%;
     background-color: #003afa;
     border-radius: 20px;
+    display: flex;
 }
 
 .vault-level {
-    right: 14%;
+    right: 7%;
     color: #ffffff;
     font-weight: 500;
-    top: 10%;
+    top: 7%;
     position: absolute;
     width: 50px;
     height: 25px;
@@ -149,12 +150,16 @@ button {
 }
 
 .vault-text {
-    position: absolute;
-    left: 50%;
-    top: 10%;
     color: #ffffff;
     font-size: 20px;
     font-weight: 500;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #ffffff;
+    padding-left: 10%;
 }
 
 .main-menu-buttons {
@@ -210,7 +215,7 @@ button {
 
 .vault-name {
     width: 100%;
-    height: 30%;
+    height: 10%;
     display: flex;
     align-items: center;
     justify-content: center;    
@@ -221,31 +226,33 @@ button {
 }
 
 .claim-tokens-button {
-    width: 100%;
+    width: 90%;
+    left: 5%;
     position: absolute;
     bottom: 0;
-    height: 23%;
+    height: 7%;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #f6f7f8;
-    background-color: #063580;
+    background-color: #0562f8;
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
+    bottom: 12%;
+    border: 1px solid #0088f8;
 }
 
 .tokens-value-vault {
     color: #f6f7f8;
     font-size: 30px;
     font-weight: 500;
-    position: absolute;
-    width: 100%;
     display: flex;
+    width: 50%;
+    height: 100%;
     justify-content: center;
     align-items: center;
-    height: 30%;
 }
 
 .level-vault {
