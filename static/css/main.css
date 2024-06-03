@@ -131,6 +131,7 @@ button {
     background-color: #003afa;
     border-radius: 20px;
     display: flex;
+    border: 1px solid #0088f8;
 }
 
 .vault-level {
