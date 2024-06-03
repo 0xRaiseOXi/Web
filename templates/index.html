@@ -77,6 +77,9 @@
         function vault_progress_bar(percentage) {
             const progressBar = document.getElementById('progress-bar');
             // let percentage = 55;
+            if (percentage == 0) {
+                percentage = 0.5;
+            }
 
             setProgress(percentage);
 
