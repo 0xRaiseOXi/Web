@@ -10,10 +10,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="version">V 0.0.2 beta</div>
+        <div class="version">V 0.0.4 beta</div>
         <div class="planet">Planet XR-1</div>
         <div class="content">
-            <div class="league">Diamond</div>
+            <div class="league">Diamond ></div>
             <div id="data-in-load-tokens", class="data-in-load-tokens">
                 <img src="/static/images/moneta.png" alt="", class="moneta-main-balance">
                 <div id="main-balance">100,000,000</div>
@@ -25,7 +25,9 @@
                     </div>
                     <div class="vault-text">Хранилище</div>
                     <div class="vault-level">lvl 1</div>
-                    <div class="tokens-value-vault", id="tokens-value-vault">450,000</div>
+                    <div class="tokens-value-vault", id="tokens-value-vault">450,000
+                        <div class="tokens-value-vault-text">OXI</div>
+                    </div>
                 </div>
             </div>
             <!-- <div class="progress-container">
@@ -71,9 +73,9 @@
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        function vault_progress_bar(percentage) {
             const progressBar = document.getElementById('progress-bar');
-            let percentage = 55; // Укажите процент заполнения здесь (например, 75%)
+            // let percentage = 55;
 
             setProgress(percentage);
 
@@ -82,7 +84,7 @@
                 if (percentage > 100) percentage = 100;
                 progressBar.style.height = percentage + '%';
             }
-        });
+        };
 
         let tg = window.Telegram.WebApp;
         tg.expand()
@@ -97,6 +99,7 @@
                 const data = await response.json();
                 data_local = data;
                 displayData(data['oxi_tokens_value'], data['added_tokens']);
+                vault_progress_bar(data['vault_use']);
             } catch (error) {
                 console.error('Ошибка при получении данных:', error);
                 dataContainer.textContent = 'Server Error';
@@ -118,6 +121,7 @@
                 const formatedData = data['oxi_tokens_value'].toLocaleString('en-US');
                 // counter.textContent = formatedData;
                 animate_main_counter(data['oxi_tokens_value']);
+                vault_progress_bar(data['vault_use']);
                 counterVault.textContent = 0;
                 data_local = data;
             });
@@ -131,9 +135,12 @@
             const added_tokens = Math.trunc(time_different_in_hours * 5000);
             const vault_size = data_local['vault_size'];
             if (added_tokens < vault_size) {
-                vault.textContent = added_tokens
+                if (added_tokens < 0) {
+                    vault.textContent = 0;
+                }
+                vault.textContent = added_tokens;
             } else {
-                vault.textContent = vault_size
+                vault.textContent = vault_size;
             }
         }
 

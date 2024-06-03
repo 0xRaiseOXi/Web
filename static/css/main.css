@@ -255,6 +255,11 @@ button {
     align-items: center;
 }
 
+.tokens-value-vault-text {
+    padding-left: 5px;
+    font-size: 16px;
+    padding-top: 7px;
+}
 .level-vault {
     right: 5%;
     position: absolute;
@@ -421,11 +426,9 @@ button {
 }
 
 .progress-container {
-    width: 35px;
-    height: 80px;
+    width: 8%;
+    height: 80%;
     position: absolute;
-    left: 7%;
-    top: 10%;
     background-color: #f3f3f3;
     border-radius: 5px;
     overflow: hidden;
@@ -435,6 +438,7 @@ button {
     align-items: center;
     flex-direction: column;
     border-radius: 7px;
+    margin: 2%;
 }
 
 .progress-bar {

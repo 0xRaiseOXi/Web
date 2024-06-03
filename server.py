@@ -84,12 +84,13 @@ def claim_tokens():
     parsed_data = parse_qs(query_string)
     id = json.loads(parsed_data['user'][0])
     data = collection.find_one({"_id": id['id']})
-
+    data_user_2 = collection2.find_one({'_id': id})
     added_tokens = update_tokens_value_vault(id['id'])
     data['oxi_tokens_value'] += added_tokens
     data['last_time_update'] = time.time()
+    vault_use = int(data['oxi_tokens_value'] / vault_size_CONSTANT[data_user_2['vault']] * 100)
     new_data = collection.replace_one({'_id': id['id']}, data)
-
+    data['vault_use'] = vault_use
     return jsonify(data)
 
 
