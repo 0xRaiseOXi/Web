@@ -18,13 +18,9 @@
                 <div id="main-balance">100,000,000</div>
             </div>
             <div class="panels-main"> 
-                <div class="panel-1", id="panel-1-coins">
-                    <div class="progress-container">
-                        <div class="progress-bar" id="progress-bar"></div>
-                    </div>
-                    <div class="vault-text">Хранилище</div>
-                    <div class="vault-level">lvl 1</div>
-                </div>
+                <div class="panel-1", id="panel-1-coins"></div>
+                <div class="panel-1", id="panel-2-energy"></div>
+                <div class="panel-1"></div>
             </div>
             <div class="vault-main">
                 <div class="vault-name">
@@ -63,19 +59,6 @@
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const progressBar = document.getElementById('progress-bar');
-            let percentage = 75; // Укажите процент заполнения здесь (например, 75%)
-
-            setProgress(percentage);
-
-            function setProgress(percentage) {
-                if (percentage < 0) percentage = 0;
-                if (percentage > 100) percentage = 100;
-                progressBar.style.height = percentage + '%';
-            }
-        });
-
         let tg = window.Telegram.WebApp;
         tg.expand()
 

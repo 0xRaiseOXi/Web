@@ -125,36 +125,11 @@ button {
     padding-right: 20px;
 }
 .panel-1 {
-    width: 100%;
+    width: 30%;
     height: 100%;
     top: 40%;
     background-color: #003afa;
     border-radius: 20px;
-}
-
-.vault-level {
-    right: 14%;
-    color: #ffffff;
-    font-weight: 500;
-    top: 10%;
-    position: absolute;
-    width: 50px;
-    height: 25px;
-    font-size: 15px;
-    background-color: #f18202;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-}
-
-.vault-text {
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 500;
 }
 
 .main-menu-buttons {
@@ -411,29 +386,4 @@ button {
     position: absolute;
     top: 15%;
     filter: invert(1);
-}
-
-.progress-container {
-    width: 35px;
-    height: 80px;
-    position: absolute;
-    left: 7%;
-    top: 10%;
-    background-color: #f3f3f3;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 7px;
-}
-
-.progress-bar {
-    width: 100%;
-    border-radius: 0;
-    height: 0;
-    background-color: #08f700;
-    transition: height 0.3s;
 }
