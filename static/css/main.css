@@ -152,7 +152,7 @@ button {
     background-color: #0c1325;
     width: 20%;
     height: 100%;
-    margin-left: 5px;
+    margin-left: 3px;
     border-radius: 20px;
     color: #757575;
     display: flex;
@@ -366,4 +366,12 @@ button {
 
 #active-navigation-bar {
     background-color: #2b3041;
+}
+
+.friends-navigation-bar {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 10%;
+    background-color: #fdfdfd;
 }
