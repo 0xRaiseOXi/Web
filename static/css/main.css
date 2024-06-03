@@ -373,7 +373,5 @@ button {
     height: 35px;
     position: absolute;
     top: 10%;
-    /* background-color: #fdfdfd; */
     filter: invert(1);
-    filter: blur();
 }
