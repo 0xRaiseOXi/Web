@@ -115,16 +115,18 @@ button {
 }
 
 .panels-main {
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    height: 12%;
     padding-left: 20px;
     padding-right: 20px;
 }
 .panel-1 {
     width: 30%;
-    height: 100px;
+    height: 100%;
     top: 40%;
     background-color: #003afa;
     border-radius: 20px;
@@ -306,13 +308,15 @@ button {
     position: absolute;
     right: 0;
     width: 200px;
-    height: 3%;
+    padding: 4px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    background-color: #f18202;
+    background-color: #003afa;
     top: 22%;
     color: #ffffff;
     display: flex;
+    font-size: large;
+    font-weight: 600;
     text-align: center;
     justify-content: center;
 }
