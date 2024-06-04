@@ -39,7 +39,7 @@ html, body {
 .main-tokens-value {
     width: 100%;
     height: 20%;
-    border-bottom: 1px solid #2c2c2c;
+    border-bottom: 12px solid #2c2c2c;
     /* background-color: #353434; */
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -118,18 +118,49 @@ button {
     position: absolute;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     width: 100%;
     height: 12%;
     padding-left: 20px;
     padding-right: 20px;
 }
 .panel-1 {
-    width: 30%;
+    width: 100%;
     height: 100%;
     top: 40%;
     background-color: #003afa;
     border-radius: 20px;
+    display: flex;
+    border: 1px solid #0088f8;
+}
+
+.vault-level {
+    right: 7%;
+    color: #ffffff;
+    font-weight: 500;
+    top: 7%;
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    font-size: 15px;
+    background-color: #f18202;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.vault-text {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #ffffff;
+    padding-left: 10%;
 }
 
 .main-menu-buttons {
@@ -185,7 +216,7 @@ button {
 
 .vault-name {
     width: 100%;
-    height: 30%;
+    height: 10%;
     display: flex;
     align-items: center;
     justify-content: center;    
@@ -196,33 +227,40 @@ button {
 }
 
 .claim-tokens-button {
-    width: 100%;
+    width: 90%;
+    left: 5%;
     position: absolute;
     bottom: 0;
-    height: 23%;
+    height: 7%;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #f6f7f8;
-    background-color: #063580;
+    background-color: #0562f8;
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
+    bottom: 12%;
+    border: 1px solid #0088f8;
 }
 
 .tokens-value-vault {
     color: #f6f7f8;
     font-size: 30px;
     font-weight: 500;
-    position: absolute;
-    width: 100%;
     display: flex;
+    width: 50%;
+    height: 100%;
     justify-content: center;
     align-items: center;
-    height: 30%;
 }
 
+.tokens-value-vault-text {
+    padding-left: 5px;
+    font-size: 16px;
+    padding-top: 7px;
+}
 .level-vault {
     right: 5%;
     position: absolute;
@@ -338,7 +376,7 @@ button {
     text-align: center;
     width: 100%;
     height: 50px;
-    border-bottom: 1px solid #3701fa;
+    border-bottom: 12px solid #3701fa;
 }
 
 .add-from-friends {
@@ -348,7 +386,7 @@ button {
     margin-top: 5%;
     margin-bottom: 5%;
     padding-left: 5%;
-    border-bottom: 1px solid #3701fa;
+    border-bottom: 12px solid #3701fa;
 }
 
 .partners {
@@ -358,7 +396,7 @@ button {
     margin-top: 5%;
     margin-bottom: 5%;
     padding-left: 5%;
-    border-bottom: 1px solid #3701fa;
+    border-bottom: 12px solid #3701fa;
 }
 
 .moneta-navigation-bar {
@@ -387,3 +425,64 @@ button {
     top: 15%;
     filter: invert(1);
 }
+
+.progress-container {
+    width: 8%;
+    height: 80%;
+    position: absolute;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 7px;
+    margin: 2%;
+}
+
+.progress-bar {
+    width: 100%;
+    border-radius: 0;
+    height: 0;
+    /* background-color: #0059ff; */
+    background-color: #ff9900;
+    transition: height 0.3s;
+} 
+/* 
+.progress-container {
+    position: absolute;
+    width: 90%;
+    height: 15%;
+    background-color: #272e3f;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 7px;
+    left: 5%;
+    border: 2px solid rgb(0, 4, 255);
+} */
+
+.factor-oxi-add {
+    width: 25%;
+    background-color: #f58608;
+    border-radius: 15px;
+    margin-left: 2px;
+}
+
+.league {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 500;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    top: 1%;
+}
+
