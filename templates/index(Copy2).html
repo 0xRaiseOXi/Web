@@ -10,19 +10,31 @@
 </head>
 <body>
     <div class="container">
-        <div class="version">V 0.0.2 beta</div>
+        <div class="version">V 0.0.4 beta</div>
         <div class="planet">Planet XR-1</div>
         <div class="content">
+            <div class="league">Diamond ></div>
             <div id="data-in-load-tokens", class="data-in-load-tokens">
                 <img src="/static/images/moneta.png" alt="", class="moneta-main-balance">
                 <div id="main-balance">100,000,000</div>
             </div>
             <div class="panels-main"> 
-                <div class="panel-1", id="panel-1-coins"></div>
-                <div class="panel-1", id="panel-2-energy"></div>
-                <div class="panel-1"></div>
+                <div class="panel-1", id="panel-1-coins">
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    <div class="vault-text">Хранилище</div>
+                    <div class="vault-level">lvl 1</div>
+                    <div class="tokens-value-vault">
+                        <div id="tokens-value-vault">0</div>
+                        <div class="tokens-value-vault-text">OXI</div>
+                    </div>
+                </div>
             </div>
-            <div class="vault-main">
+            <!-- <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div> -->
+            <!-- <div class="vault-main">
                 <div class="vault-name">
                     Хранилище
                     <div class="level-vault">lvl 1</div>
@@ -30,7 +42,8 @@
                 <div class="tokens-value-vault", id="tokens-value-vault">450,000</div>
                 <div class="claim-tokens-button", id="claim-tokens-button">Собрать</div>
                 <div class="progress-bar", id="progress-bar"></div>
-            </div>
+            </div> -->
+            <div class="claim-tokens-button", id="claim-tokens-button">Собрать OXI</div>
             <div class="main-menu-buttons">
                 <div class="button-menu-buttons", id="active-navigation-bar">
                     <img src="/static/images/moneta.png" alt="", class="moneta-navigation-bar">
@@ -53,12 +66,30 @@
                     Атака
                 </div>
             </div>
-            <div class="tasks">+1000 OXI/hour</div>
+            <div class="tasks">
+                <div>+1000 OXI/hour</div>
+            </div>
         </div>
     </div>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
+        function vault_progress_bar(percentage) {
+            const progressBar = document.getElementById('progress-bar');
+            // let percentage = 55;
+            if (percentage == 0) {
+                percentage = 1;
+            }
+
+            setProgress(percentage);
+
+            function setProgress(percentage) {
+                if (percentage < 0) percentage = 0;
+                if (percentage > 100) percentage = 100;
+                progressBar.style.height = percentage + '%';
+            }
+        };
+
         let tg = window.Telegram.WebApp;
         tg.expand()
 
@@ -72,6 +103,7 @@
                 const data = await response.json();
                 data_local = data;
                 displayData(data['oxi_tokens_value'], data['added_tokens']);
+                vault_progress_bar(data['vault_use']);
             } catch (error) {
                 console.error('Ошибка при получении данных:', error);
                 dataContainer.textContent = 'Server Error';
@@ -93,6 +125,7 @@
                 const formatedData = data['oxi_tokens_value'].toLocaleString('en-US');
                 // counter.textContent = formatedData;
                 animate_main_counter(data['oxi_tokens_value']);
+                vault_progress_bar(0);
                 counterVault.textContent = 0;
                 data_local = data;
             });
@@ -100,15 +133,24 @@
         
         function vault_update() {
             const vault = document.getElementById("tokens-value-vault");
+            const progress_bar = document.getElementById("progress-container");
             const current_time = Math.floor(Date.now() / 1000);
             const time_difference = current_time - data_local['last_time_update'];
             const time_different_in_hours = time_difference / 3600;
             const added_tokens = Math.trunc(time_different_in_hours * 5000);
             const vault_size = data_local['vault_size'];
+            const percentage = Math.trunc(added_tokens / vault_size * 100);
             if (added_tokens < vault_size) {
-                vault.textContent = added_tokens
+                if (added_tokens < 0) {
+                    vault.textContent = 0;
+                    vault_progress_bar(percentage);
+                } else {
+                    vault.textContent = added_tokens;
+                    vault_progress_bar(percentage);
+                }
             } else {
-                vault.textContent = vault_size
+                vault.textContent = vault_size;
+                vault_progress_bar(percentage);
             }
         }
 
