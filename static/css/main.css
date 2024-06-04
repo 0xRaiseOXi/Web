@@ -17,7 +17,7 @@ html, body {
     height: 100%;
     width: 100%;
     background-color: rgb(34, 36, 41);
-    background-color: #ffffff;
+    background-color: #152133;
 }
 
 .content {
@@ -31,8 +31,8 @@ html, body {
     border-top-right-radius: 30px;
     /* background-image: linear-gradient(to bottom, black, black 30%, cyan); */
     /* background-image: linear-gradient(to bottom, black, black 30%, red); */
-    /* background-image: linear-gradient(to bottom, #ffffff, #ffffff 25%, rgb(17, 0, 255));  */
-    box-shadow: 0 -10px 20px rgba(102, 121, 231, 0.7);
+    background-image: linear-gradient(to bottom, #090b0f, #0d1622 25%, rgb(17, 0, 255)); 
+    box-shadow: 0 -10px 20px rgba(3, 33, 199, 0.7);
     /* transition: box-shadow 0.3s ease-in-out; */
 }
 
@@ -50,7 +50,7 @@ html, body {
 }
 
 .data-in-load-tokens {
-    color: #383535;
+    color: #f6f7f8;
     font-size: 50px;
     display: flex;
     justify-content: center; 
@@ -128,10 +128,10 @@ button {
     width: 100%;
     height: 100%;
     top: 40%;
-    background-color: #ffffff;
+    background-color: #003afa;
     border-radius: 20px;
     display: flex;
-    border: 1px solid #665ccf;
+    border: 1px solid #0088f8;
 }
 
 .vault-level {
@@ -151,7 +151,7 @@ button {
 }
 
 .vault-text {
-    color: #0051ff;
+    color: #ffffff;
     font-size: 20px;
     font-weight: 500;
     width: 50%;
@@ -159,7 +159,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 2px solid #004ff8;
+    border-right: 2px solid #ffffff;
     padding-left: 10%;
 }
 
@@ -168,14 +168,13 @@ button {
     position: absolute;
     width: 90%;
     height: 10%;
-    background-color: #ffffff;
+    background-color: #152133;
     left: 5%;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 5px;
-    border: 2px solid #000000;
 }
 
 #active-button-menu {
@@ -183,17 +182,17 @@ button {
     height: 110%;
 }
 .button-menu-buttons {
-    background-color: #dddddd;
+    background-color: #0c1325;
     width: 20%;
     height: 100%;
     margin-left: 3px;
     border-radius: 20px;
-    color: #333333;
+    color: #757575;
     display: flex;
     align-items: end;
     justify-content: center;
     padding-bottom: 10px;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 13px;
     cursor: pointer;
 }
@@ -237,8 +236,8 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #0066ff;
-    background-color: #ffffff;
+    color: #f6f7f8;
+    background-color: #0562f8;
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
@@ -247,7 +246,7 @@ button {
 }
 
 .tokens-value-vault {
-    color: #0066ff;
+    color: #f6f7f8;
     font-size: 30px;
     font-weight: 500;
     display: flex;
@@ -408,7 +407,7 @@ button {
 }
 
 #active-navigation-bar {
-    background-color: #c6d0f0;
+    background-color: #2b3041;
 }
 
 .friends-navigation-bar {
@@ -431,7 +430,7 @@ button {
     width: 8%;
     height: 80%;
     position: absolute;
-    background-color: #c2bebe;
+    background-color: #f3f3f3;
     border-radius: 5px;
     overflow: hidden;
     margin-bottom: 20px;
