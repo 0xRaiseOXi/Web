@@ -281,30 +281,45 @@ html, body {
 .friends-all {
     font-size: 16px;
     display: flex;
-    text-align: center;
+    align-items: center;
     width: 100%;
-    height: 50px;
-    border-bottom: 12px solid #3701fa;
+    height: 25%;
+    padding-left: 10%;
+    border-bottom: 2px solid #3701fa;
 }
 
 .add-from-friends {
     font-size: 16px;
+    display: flex;
+    align-items: center;
     width: 100%;
-    height: 10%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    padding-left: 5%;
-    border-bottom: 12px solid #3701fa;
+    height: 25%;
+    padding-left: 10%;
+    border-bottom: 2px solid #3701fa;
+}
+
+.friends-add-value {
+    width: 20%;
+    height: 12%;
+    background-color: #0065fc;
+    display: flex;
+    right: 10%;
+    position: absolute;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .partners {
     font-size: 16px;
+    display: flex;
+    align-items: center;
     width: 100%;
-    height: 10%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    padding-left: 5%;
-    border-bottom: 12px solid #3701fa;
+    height: 25%;
+    padding-left: 10%;
+    border-bottom: 2px solid #3701fa;
 }
 
 .moneta-navigation-bar {

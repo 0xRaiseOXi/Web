@@ -116,7 +116,7 @@ async def main_menu(callback: types.CallbackQuery = None, message: types.Message
         [
             types.InlineKeyboardButton(text="<-- Собрать OXI -->", callback_data="collect_tokens"),
             types.InlineKeyboardButton(text="Обновить", callback_data="main_menu_update"),
-            types.InlineKeyboardButton(text="Открыть", web_app=WebAppInfo(url="https://dmraise.ru/"))
+            types.InlineKeyboardButton(text="Открыть", web_app=WebAppInfo(url="https://oxiprotocol.ru/"))
         ],
         [
             types.InlineKeyboardButton(text="Профиль", callback_data="profile"),
