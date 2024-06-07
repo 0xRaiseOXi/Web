@@ -86,7 +86,7 @@
         async function fetchData() {
             const dataContainer = document.getElementById('main-balance');
             try {
-                const url = `https://dmraise.ru/getdata?${tg.initData}`;
+                const url = `https://oxiprotocol.ru/getdata?${tg.initData}`;
                 const response = await fetch(url);
                 const data = await response.json();
                 data_local = data;
@@ -104,7 +104,7 @@
             const counterVault = document.getElementById('tokens-value-vault');
 
             myDiv.addEventListener('click', async () => {
-                const url = `https://dmraise.ru/claim_tokens?${tg.initData}`;
+                const url = `https://oxiprotocol.ru/claim_tokens?${tg.initData}`;
                 const response = await fetch(url);
                 if (!response.ok) {
                     myDiv.textContent = "Server Error";
