@@ -95,4 +95,4 @@ def claim_tokens():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=443, ssl_context=('/etc/letsencrypt/live/dmraise.ru/fullchain.pem', '/etc/letsencrypt/live/dmraise.ru/privkey.pem'))
+    app.run(host='0.0.0.0', port=443, ssl_context=('/etc/letsencrypt/live/oxiprotocol.ru/fullchain.pem', '/etc/letsencrypt/live/oxiprotocol.ru/privkey.pem'))
