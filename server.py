@@ -44,6 +44,11 @@ def update_tokens_value_vault(id):
 def index():
     return render_template('index.html')
 
+@app.route('/main')
+def main():
+    return render_template('index.html')
+
+
 @app.route('/friends')
 def friends():
     return render_template('friends.html')
